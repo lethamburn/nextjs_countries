@@ -1,5 +1,21 @@
 import Layout from "../components/Layout/Layout.jsx";
+import styles from "../styles/Home.module.css";
 
-export default function Home() {
-  return <Layout>Este es el hijo</Layout>;
+export default function Home({ countries }) {
+  console.log(countries);
+  return (
+    <Layout>
+      <div className={styles.counts}>Found {countries.length} countries</div>
+    </Layout>
+  );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://restcountries.com/v3.1/all");
+  const countries = await res.json();
+  return {
+    props: {
+      countries,
+    },
+  };
+};
