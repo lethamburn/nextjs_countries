@@ -15,7 +15,8 @@ const Layout = ({ children, title="World Stats" }) => {
         <img src="./logo.png" alt="World Stats logo" width="150px" />
       </header>
 
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>{children}
+      </main>
 
       <footer className={styles.footer}>Upgrade Hub - 2021</footer>
     </div>
