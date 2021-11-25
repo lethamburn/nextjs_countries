@@ -1,13 +1,17 @@
+import CountriesTable from "../components/CountriesTable/CountriesTable.jsx";
 import Layout from "../components/Layout/Layout.jsx";
 import SearchInput from "../components/SearchInput/SearchInput.jsx";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ countries }) {
-  console.log(countries);
+  /* console.log(countries); */
   return (
     <Layout>
       <div className={styles.counts}>Found {countries.length} countries</div>
+
       <SearchInput placeholder="Filter by Name, Region or Subregion" />
+
+      <CountriesTable countries={countries} />
     </Layout>
   );
 }
