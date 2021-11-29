@@ -1,6 +1,7 @@
 import styles from "./CountriesTable.module.css";
 
 const CountriesTable = ({ countries }) => {
+    console.log(countries)
   return (
     <div>
       <div className={styles.heading}>
@@ -14,7 +15,7 @@ const CountriesTable = ({ countries }) => {
       
       {countries.map((country) => (
         <div className={styles.row}>
-          <div className={styles.name}>{country.name}</div>
+          <div className={styles.name}>{country.name.official}</div>
           <div className={styles.population}>{country.population}</div>
         </div>
       ))}
