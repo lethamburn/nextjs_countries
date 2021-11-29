@@ -1,5 +1,7 @@
+import React from "react";
 import styles from "./CountriesTable.module.css";
 import KeyboardArrowDownRounded from "@material-ui/icons/KeyboardArrowDownRounded";
+import KeyboardArrowUpRounded from "@material-ui/icons/KeyboardArrowUpRounded";
 
 const orderBy = (countries, direction) => {
   if (direction === "asc") {
@@ -14,20 +16,50 @@ const orderBy = (countries, direction) => {
   }
   return countries;
 };
+
+const SortArrow = ({ direction }) => {
+  if (!direction) {
+    return <></>;
+  }
+  if (direction === "desc") {
+    return (
+      <div className={styles.heading_arrow}>
+        <KeyboardArrowDownRounded color="inherit" />
+      </div>
+    );
+  } else {
+    return (
+      <div className={styles.heading_arrow}>
+        <KeyboardArrowUpRounded color="inherit" />
+      </div>
+    );
+  }
+};
 const CountriesTable = ({ countries }) => {
+  const [direction, setDirection] = React.useState();
+  const [value, setValue] = React.useState();
   const orderedCountries = orderBy(countries, "desc");
 
+  const switchDirection = () => {
+    if (!direction) {
+      setDirection("desc");
+    } else if (direction === "desc") {
+      setDirection("asc");
+    } else {
+      setDirection("asc");
+    }
+  };
   return (
     <div>
       <div className={styles.heading}>
-        <button className={styles.heading_name}>
+        <button className={styles.heading_name} onClick={switchDirection}>
           <div>Name</div>
-          <KeyboardArrowDownRounded />
+          <SortArrow />
         </button>
-        <button className={styles.heading_population}>
+        <button className={styles.heading_population} onClick={switchDirection} >
           <div>Population</div>
 
-          <KeyboardArrowDownRounded />
+          <SortArrow direction={direction} />
         </button>
       </div>
 
