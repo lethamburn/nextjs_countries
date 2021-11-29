@@ -15,7 +15,7 @@ const CountriesTable = ({ countries }) => {
       
       {countries.map((country) => (
         <div className={styles.row}>
-          <div className={styles.name}>{country.name.official}</div>
+          <div className={styles.name}>{country.name.common}</div>
           <div className={styles.population}>{country.population}</div>
         </div>
       ))}
