@@ -5,8 +5,8 @@ import SearchInput from "../components/SearchInput/SearchInput.jsx";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ countries }) {
+/*   console.log(countries) */
   const [keyword, setKeyword] = useState("");
-
   const filteredCountries = countries.filter(
     (country) =>
       country.name.common.toLowerCase().includes(keyword) ||
