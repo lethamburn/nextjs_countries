@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./CountriesTable.module.css";
 import KeyboardArrowDownRounded from "@material-ui/icons/KeyboardArrowDownRounded";
 import KeyboardArrowUpRounded from "@material-ui/icons/KeyboardArrowUpRounded";
-import Link from "next/Link";
+import Link from "next/link";
 
 const orderBy = (countries, value, direction) => {
   if (direction === "asc") {
@@ -73,14 +73,12 @@ const CountriesTable = ({ countries }) => {
       </div>
 
       {orderedCountries.map((country) => (
-        <div key={country.name.common}>
-          <Link href={`/country/${country.name.common}`}>
-            <div className={styles.row}>
-              <div className={styles.name}>{country.name.common}</div>
-              <div className={styles.population}>{country.population}</div>
-            </div>
-          </Link>
-        </div>
+        <Link key={country.name.common} href={`/country/${country.name.common}`}>
+          <div className={styles.row} >
+            <div className={styles.name}>{country.name.common}</div>
+            <div className={styles.population}>{country.population}</div>
+          </div>
+        </Link>
       ))}
     </div>
   );
