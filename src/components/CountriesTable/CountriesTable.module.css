@@ -12,7 +12,7 @@
 .heading_population {
   flex: 1;
   padding: 20px;
-  color: var(--text-color-secondary);
+  color: var(--text-secondary);
   font-weight: 700;
 
   display: flex;
