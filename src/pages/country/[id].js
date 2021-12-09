@@ -45,6 +45,9 @@ const Country = ({ country }) => {
               {country[0].capital}
             </div>
           </div>
+          {country[0].borders.map((border) => {
+            return <h1>{border}</h1>;
+          })}
         </div>
       </div>
     </Layout>

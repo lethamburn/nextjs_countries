@@ -12,7 +12,7 @@ const Layout = ({ children, title="World Stats" }) => {
       </Head>
 
       <header className={styles.header}>
-        <img src="./logo.png" alt="World Stats logo" width="150px" />
+        <img src="https://i.imgur.com/Y28l856.png" alt="World Stats logo" width="150px" />
       </header>
 
       <main className={styles.main}>{children}
