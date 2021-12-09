@@ -4,8 +4,8 @@ import styles from "./Country.module.css";
 const Country = ({ country }) => {
   console.log("COUNTRY", country);
   return (
-    <Layout title={country[0].name.common} key={country.name.common}>
-      <div >
+    <Layout title={country[0].name.common}>
+      <div>
         <div className={styles.overview_panel}>
           <img src={country[0].flags.png} alt={country[0].name.common} />
           <h1 className={styles.overview_name}>{country[0].name.common}</h1>
@@ -46,7 +46,7 @@ const Country = ({ country }) => {
             </div>
           </div>
           {country[0].borders.map((border) => {
-            return <h1>{border}</h1>;
+            return <h1 key={border}>{border}</h1>;
           })}
         </div>
       </div>
