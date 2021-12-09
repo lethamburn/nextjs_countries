@@ -2,13 +2,12 @@ import Layout from "../../components/Layout/Layout";
 import styles from "./country.module.css";
 
 const Country = ({ country }) => {
-  console.log("COUNTRY", country);
   return (
     <Layout title={country[0].name.common}>
       <div>
         <div className={styles.overview_panel}>
-          <img src={country[0].flags.png} alt={country[0].name.common} />
-          <h1 className={styles.overview_name}>{country[0].name.common}</h1>
+          <img src={country[0].flags.svg} alt={country[0].name.common} />
+          <h1 className={styles.overview_name}>{country[0].name.official}</h1>
           <div className={styles.overview_region}>{country[0].region}</div>
           <div className={styles.overview_numbers}>
             <div className={styles.overview_population}>
@@ -40,14 +39,39 @@ const Country = ({ country }) => {
           </div>
 
           <div className={styles.details_panel_row}>
-            <div className={styles.details_panel_label}>Capital</div>
+            <div className={styles.details_panel_label}>Borders</div>
             <div className={styles.details_panel_value}>
-              {country[0].capital}
+              {country[0].borders.map((border) => {
+                return <h1 key={border}>{border}.</h1>;
+              })}
             </div>
           </div>
-          {country[0].borders.map((border) => {
-            return <h1 key={border}>{border}</h1>;
-          })}
+
+          <div className={styles.details_panel_row}>
+            <div className={styles.details_panel_label}>Latitudes</div>
+            <div className={styles.details_panel_value}>
+              {country[0].latlng.map((latitudes) => {
+                return <h1 key={latitudes}>{latitudes}.</h1>;
+              })}
+            </div>
+          </div>
+
+          <div className={styles.details_panel_row}>
+            <div className={styles.details_panel_label}>Coat of arms</div>
+            <div className={styles.details_panel_value}>
+              <img
+                src={country[0].coatOfArms.svg}
+                alt={country[0].name.common}
+              />
+            </div>
+          </div>
+
+          <div className={styles.details_panel_row}>
+            <div className={styles.details_panel_label}>Timezone</div>
+            <div className={styles.details_panel_value}>
+              {country[0].timezones}
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

@@ -44,6 +44,7 @@
 .details_panel_heading {
   padding: 20px;
   padding-bottom: 0;
+  text-align: center;
 }
 
 .details_panel_row {
@@ -55,4 +56,14 @@
 
 .details_panel_label {
   color: var(--text-secondary);
+}
+
+.details_panel_value {
+  display: flex;
+  justify-content: space-around;
+}
+
+.details_panel_value img {
+  padding: 20px;
+  width: 30%;
 }
