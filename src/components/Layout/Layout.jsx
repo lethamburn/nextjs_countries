@@ -1,8 +1,9 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import styles from "./Layout.module.css";
 
-const Layout = ({ children, title="World Stats" }) => {
+const Layout = ({ children, title = "World Stats" }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,11 +13,16 @@ const Layout = ({ children, title="World Stats" }) => {
       </Head>
 
       <header className={styles.header}>
-        <img src="https://i.imgur.com/Y28l856.png" alt="World Stats logo" width="150px" />
+        <Link href="/">
+          <img
+            src="https://i.imgur.com/Y28l856.png"
+            alt="World Stats logo"
+            width="150px"
+          />
+        </Link>
       </header>
 
-      <main className={styles.main}>{children}
-      </main>
+      <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>Upgrade Hub - 2021</footer>
     </div>
