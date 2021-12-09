@@ -13,7 +13,7 @@ const Layout = ({ children, title = "World Stats" }) => {
       </Head>
 
       <header className={styles.header}>
-        <Link href="/">
+        <Link passHref href="/">
           <img
             src="https://i.imgur.com/Y28l856.png"
             alt="World Stats logo"
