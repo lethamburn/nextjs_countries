@@ -37,15 +37,16 @@ const Country = ({ country }) => {
               {country[0].subregion}
             </div>
           </div>
-
-          <div className={styles.details_panel_row}>
-            <div className={styles.details_panel_label}>Borders</div>
-            <div className={styles.details_panel_value}>
-              {country[0].borders.map((border) => {
-                return <h1 key={border}>{border}.</h1>;
-              })}
+          {country[0].borders ? (
+            <div className={styles.details_panel_row}>
+              <div className={styles.details_panel_label}>Borders</div>
+              <div className={styles.details_panel_value}>
+                {country[0].borders.map((border) => {
+                  return <h1 key={border}>{border}.</h1>;
+                })}
+              </div>
             </div>
-          </div>
+          ) : null}
 
           <div className={styles.details_panel_row}>
             <div className={styles.details_panel_label}>Latitudes</div>
