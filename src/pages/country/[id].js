@@ -5,7 +5,7 @@ const Country = ({ country }) => {
   console.log("COUNTRY", country);
   return (
     <Layout title={country[0].name.common}>
-      <div>
+      <div key={country.name.common}>
         <div className={styles.overview_panel}>
           <img src={country[0].flags.png} alt={country[0].name.common} />
           <h1 className={styles.overview_name}>{country[0].name.common}</h1>
