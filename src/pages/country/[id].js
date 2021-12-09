@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout/Layout";
-import styles from "./Country.module.css";
+import styles from "./country.module.css";
 
 const Country = ({ country }) => {
   console.log("COUNTRY", country);
