@@ -1,13 +1,33 @@
+@media (min-width: 790px) and (max-width: 1920px) {
+  .country_container{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
 .overview_panel img {
   width: 100%;
   border-radius: 4px;
 }
 
+@media (min-width: 790px) and (max-width: 1920px) {
+  .overview_panel img {
+    width: 30%;
+  }
+}
+
 .overview_panel {
+  text-align: center;
   padding: 20px;
   border-radius: 8px;
   box-shadow: var(--box-shadow);
   background-color: var(--background-color-light);
+}
+@media (min-width: 790px) and (max-width: 1920px) {
+  .overview_panel {
+    width: 40%;
+  }
 }
 
 .overview_name {
@@ -39,6 +59,12 @@
   background-color: var(--background-color-light);
   box-shadow: var(--box-shadow);
   border-radius: 8px;
+}
+
+@media (min-width: 790px) and (max-width: 1920px) {
+  .details_panel {
+    width: 40%;
+  }
 }
 
 .details_panel_heading {

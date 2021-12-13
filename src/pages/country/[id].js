@@ -4,7 +4,7 @@ import styles from "./country.module.css";
 const Country = ({ country }) => {
   return (
     <Layout title={country[0].name.common}>
-      <div>
+      <div className={styles.country_container}>
         <div className={styles.overview_panel}>
           <img src={country[0].flags.svg} alt={country[0].name.common} />
           <h1 className={styles.overview_name}>{country[0].name.official}</h1>
