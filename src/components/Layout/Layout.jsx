@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./Layout.module.css";
+import { Brightness6Rounded } from "@material-ui/icons";
 
 const Layout = ({ children, title = "World Stats" }) => {
+  const [theme, setTheme] = useState("light");
+
+  const switchTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      setTheme("light");
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,6 +33,9 @@ const Layout = ({ children, title = "World Stats" }) => {
             width="150px"
           />
         </Link>
+        <button className={styles.themeSwitcher} onClick={switchTheme}>
+          <Brightness6Rounded />
+        </button>
       </header>
 
       <main className={styles.main}>{children}</main>
